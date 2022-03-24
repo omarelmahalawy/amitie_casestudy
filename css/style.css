@@ -31,6 +31,80 @@ ul {
     --third-color:#f1f3f5;
 }
 /* end global variables */
+/* start loading */
+.loading {
+    color: var(--main-color);
+    background-color: var(--third-color);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 10;
+    font-size: 2em;
+    transition: var(--transition-card);
+    animation: appearance 1s 10s forwards;
+    animation-iteration-count: 1;
+}
+.load-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+.loading span {
+    filter: opacity(0);
+}
+.loading span:nth-child(1) {
+    transition: var(--transition-card);
+    animation: blenking 4s  0s infinite linear  forwards;
+}
+.loading span:nth-child(2) {
+    transition: var(--transition-card);
+    animation: blenking 4s  0.25s infinite linear  forwards;
+}
+.loading span:nth-child(3) {
+    transition: var(--transition-card);
+    animation: blenking 4s  0.5s infinite linear  forwards;
+}
+.loading span:nth-child(4) {
+    transition: var(--transition-card);
+    animation: blenking 4s  0.75s infinite linear  forwards;
+}
+.loading span:nth-child(5) {
+    transition: var(--transition-card);
+    animation: blenking 4s  1s infinite linear  forwards;
+}
+.loading span:nth-child(6) {
+    transition: var(--transition-card);
+    animation: blenking 4s  1.25s infinite linear  forwards;
+}
+.loading span:nth-child(7) {
+    transition: var(--transition-card);
+    animation: blenking 4s  1.5s infinite linear  forwards;
+}
+.loading span:last-child {
+    transition: var(--transition-card);
+    animation: blenking 4s  1.75s infinite linear  forwards;
+}
+@keyframes blenking {
+    from {
+        filter: opacity(0) brightness(0.2);
+    }
+    to {
+        filter: opacity(1) brightness(1.2);
+    }
+}
+@keyframes appearance {
+    from {
+        filter: opacity(1);
+    }
+    to {
+        filter: opacity(0);
+        z-index: -10;
+    }
+}
+/* end loading */
 /* Start components */
 .main-heading {
     position: relative;
@@ -336,7 +410,7 @@ header .icon div {
     padding: var(--mainp);
     transform: scaleX(0);
     filter: grayscale(0.5) opacity(0);
-    animation: show-text 1.5s forwards;
+    animation: show-text 1.5s 11s forwards;
 }
 @keyframes show-text {
     0% {
@@ -350,7 +424,7 @@ header .icon div {
 }
 .text .content {
     filter: grayscale(0.5) opacity(0);
-    animation: appearence 1.5s forwards 1.5s;
+    animation: appearence 1.5s forwards 12.5s;
 }
 .text h2 {
     font-weight: normal;
@@ -380,7 +454,7 @@ header .icon div {
     text-transform: uppercase;
     margin-right: 100px;
     filter: grayscale(0.5) opacity(0);
-    animation: show-button 1.5s forwards 3s ;
+    animation: show-button 1.5s forwards 14s ;
     transition: var(--transition-card);
     cursor: pointer;
 }
@@ -424,9 +498,6 @@ header .icon div {
     }
 }
 /* start services */
-.services {
-    /* background-color: var(--third-color); */
-}
 .serv {
     display: flex;
     justify-content: flex-end;
