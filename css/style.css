@@ -446,6 +446,11 @@ header .icon div {
         filter: grayscale(0) opacity(1);
     }
 }
+.landing .button a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
 .landing .text .button {
     background-color: var(--main-color);
     padding: 10px 30px;
